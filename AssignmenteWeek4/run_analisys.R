@@ -92,7 +92,7 @@ colnames(MergeSet) <- gsub("-", "_", colnames(MergeSet))
 colnames(MergeSet) <- gsub("\\(\\)", "_", colnames(MergeSet))
 colnames(MergeSet) <- gsub("__", "_", colnames(MergeSet))
 
-write.csv(MergeSet, file="tidy_data_set.csv")
+write.table(MergeSet, file="tidy_data_set.csv", row.name=FALSE)
 
 ###################################################
 # From the data set in step 4, creates a second, independent tidy data set 
@@ -117,4 +117,4 @@ list_interaction <- split(MergeSet[,1:79], interactions)
 # then I work out the averages of all possible combinations
 averages <- t(sapply(list_interaction, FUN = colMeans))
 
-write.csv(averages, file="tidy_data_set_2.csv")
+write.table(averages, file="tidy_data_set_2.csv", row.name=FALSE)
