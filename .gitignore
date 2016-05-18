@@ -1,3 +1,4 @@
+*.txt
 ## SugarCRM
 # Ignore custom .htaccess stuff.
 /.htaccess
